@@ -1,0 +1,19 @@
+.Banner{
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    .Cover{
+        z-index: 1;
+        height: 100%;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: grid;
+        place-items: center;
+        text-align: center;
+        color: var(--primary-text-color);
+    }
+}
