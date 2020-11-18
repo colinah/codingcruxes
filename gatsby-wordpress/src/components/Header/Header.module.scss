@@ -43,8 +43,14 @@
         }
     
         .Menu{  
+            padding-right: 5px;
             z-index: 102;
             color: var(--primary-text-color);
+            display: none;
+
+            @media(min-width: 768px) {
+                display: block;
+            }
             span {
                 padding: 10px 10px 0px 10px;
                 &:hover{
@@ -53,13 +59,68 @@
                 }
             }
         }
+        .Toggle {
+            z-index: 102;
+            display: flex;
+            font-size: 40px;
+            color: white;
+            flex-direction: column;
+            justify-content: center;
+            height: 40px;
+            width: 40px;
+            margin-right: 20px;
 
+            @media(min-width: 768px) {
+                display: none;
+            }
+
+            span {
+                margin-bottom: 10px;
+                width: 100%;
+                border-bottom: 3px solid white;
+            }
+        }
     }
 }
 html:not([data-scroll="0"]) {
     .Bg{
         background-color: var(--primary-bg-color);
     }
+}
+.Mobile {
+    z-index: 105;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    background-color: var(--primary-bg-color);
+
+    span {
+        width: 100%;
+        text-align: center;
+        padding: 20px;
+        color: var(--primary-text-color);
+    }
+}
+
+.Show {
+    display: flex;
+}
+
+.Hide {
+    display: none;
+}
+
+.Module {
+    z-index: 99;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0,0,0,0.5);
 }
 
 

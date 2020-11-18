@@ -1,0 +1,20 @@
+.Post {
+    margin: 6em auto;
+    color: var(--primary-text-color);
+
+    .Title {
+        font-size: 3em;
+        margin: 0;
+
+    }
+
+    .Date {
+        font-size: 0.9em;
+    }
+
+    .Content {
+        font-size: 1em;
+
+
+    }
+}

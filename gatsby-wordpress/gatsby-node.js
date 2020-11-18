@@ -15,7 +15,6 @@ exports.createPages = ({ graphql, actions }) => {
         }
       }
     }
-
   `).then(result => {
     result.data.allWordpressPost.edges.forEach(({ node }) => {
       createPage({

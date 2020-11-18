@@ -4,16 +4,17 @@ import { useStaticQuery, graphql } from "gatsby"
 export default () => {
     const data = useStaticQuery(graphql`
     query LogoQuery {
-        wordpressWpMedia(wordpress_id: {eq: 5}) {
+      allWordpressWpMedia(filter: {slug: {eq: "cropped-cc-logo-circle-png"}}) {
+        nodes {
+          alt_text
+          slug
           localFile {
-            childImageSharp {
-              fluid {
-                src
-              }
-            }
+            publicURL
           }
         }
       }
-      `)
-    return <img style={{width:'auto', height: '100%'}} src={data.wordpressWpMedia.localFile.childImageSharp.fluid.src} />
+    }`)
+      console.log('data:',data)
+
+    return <img style={{width:'auto', height: '100%'}} src={data.allWordpressWpMedia.nodes[0].localFile.publicURL} />
 }

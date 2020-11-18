@@ -1,4 +1,5 @@
 import React from "react"
+import classes from './index.module.scss'
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -8,14 +9,12 @@ export default ({ data }) => {
   console.log(data)
   return (
     <Layout>
-      <SEO title="home" />
-      <h1>My WordPress Blog</h1>
-      <h4>Posts</h4>
+      <SEO title="Home" />
+      <div className={classes.Posts}>
       {data.allWordpressPost.edges.map(({ node }) => (
-        <div key={node.title}>
           <PostCard key={node.wordpress_id} title={node.title} excerpt={node.excerpt} slug={node.slug} img={node.featured_media.localFile.publicURL}/>
-        </div>
       ))}
+      </div>
     </Layout>
   )
 }
